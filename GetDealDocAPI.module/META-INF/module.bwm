@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:JsonSchema="/T1544634116962Converted/JsonSchema" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_Tr_mMP4uEeimC7oIO-LnBw" targetNamespace="http://tns.tibco.com/bw/composite/GetDealDocAPI.module" name="GetDealDocAPI.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_oiXisv4vEeimC7oIO-LnBw" name="DealDoc" promote="ComponentProcess/DealDoc">
+    <sca:interface.wsdl xmi:id="_oiXitv4vEeimC7oIO-LnBw" interface="http://xmlns.example.com/20181212120147PLT#wsdl.interface(DealDoc)" scaext:wsdlLocation="../Processes/getdealdocapi/module/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_oiYJwP4vEeimC7oIO-LnBw" name="RestService" path="/DealDoc" docBasePath="http://localhost:7777/GetDealDocAPI.module" docResourcePath="DealDoc" basePath="/" connector="getdealdocapi.module.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/GetDealDoc_1.0.0.json">
+      <operation xmi:id="_oiYJwv4vEeimC7oIO-LnBw" operationName="get" nickname="getDealDoc" httpMethod="GET" responseStyle="element">
+        <parameters xmi:id="_oiYJx_4vEeimC7oIO-LnBw">
+          <parameterMapping xmi:id="_oiYJyP4vEeimC7oIO-LnBw" parameterName="DealId" parameterType="Query" dataType="integer#int32" required="true" description=""/>
+        </parameters>
+        <responseStatus xmi:id="_oiYJxP4vEeimC7oIO-LnBw" statusCode="201" reasonPhrase="Success" elementQName="JsonSchema:GiveNewSchemaNameHere"/>
+        <clientFormat>json</clientFormat>
+      </operation>
+      <parameters xmi:id="_oiYJxv4vEeimC7oIO-LnBw"/>
+      <import xmi:id="_oiYJxf4vEeimC7oIO-LnBw" importType="http://www.w3.org/2001/XMLSchema" namespace="/T1544634116962Converted/JsonSchema"/>
+      <advancedConfig xmi:id="_oiYJwf4vEeimC7oIO-LnBw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_oiYJw_4vEeimC7oIO-LnBw" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_T1oDUP4uEeimC7oIO-LnBw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_T1x0UP4uEeimC7oIO-LnBw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_T1x0Uf4uEeimC7oIO-LnBw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_T1x0Uv4uEeimC7oIO-LnBw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_T1x0U_4uEeimC7oIO-LnBw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_T17lUP4uEeimC7oIO-LnBw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_DKAvsP4wEeimC7oIO-LnBw" name="salesforce.wsdl" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_nGjsAP4vEeimC7oIO-LnBw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nGjsAf4vEeimC7oIO-LnBw" processName="getdealdocapi.module.Process"/>
+    <sca:service xmi:id="_oiXisP4vEeimC7oIO-LnBw" name="DealDoc">
+      <sca:interface.wsdl xmi:id="_oiXisf4vEeimC7oIO-LnBw" interface="http://xmlns.example.com/20181212120147PLT#wsdl.interface(DealDoc)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

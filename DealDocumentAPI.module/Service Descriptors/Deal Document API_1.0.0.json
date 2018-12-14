@@ -1,0 +1,174 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Deal Document API",
+    "description": "DealDoc endpoint",
+    "version": "1.0.0",
+    "x-lastModified": "Dec 07, 2018 10:47AM PST"
+  },
+  "host": "mocksvc.mulesoft.com",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "definitions": {
+    "deal": {
+      "type": "object",
+      "properties": {
+        "dealId": {
+          "example": 12345,
+          "type": "integer"
+        },
+        "dealdocs": {
+          "$ref": "#/definitions/DealDocs"
+        }
+      },
+      "required": [
+        "dealId"
+      ]
+    },
+    "DealDocs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/DealDoc"
+      }
+    },
+    "DealDoc": {
+      "type": "object",
+      "properties": {
+        "reference": {
+          "description": "A unique label used to identify this particular Deal Document.",
+          "type": "string"
+        },
+        "documentName": {
+          "type": "string"
+        },
+        "documentCategory": {
+          "enum": [
+            "Transaction Review",
+            "Property"
+          ],
+          "type": "string"
+        },
+        "documentType": {
+          "enum": [
+            "Lender Narrative",
+            "Property Photos"
+          ],
+          "type": "string"
+        },
+        "documentFile": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "documentName",
+        "documentCategory",
+        "documentType",
+        "documentFile"
+      ]
+    },
+    "BadRequest": {
+      "description": "Describes an error response",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Code defining an error message",
+          "example": 123,
+          "type": "string"
+        },
+        "message": {
+          "description": "Message describing the error",
+          "example": "This is an error message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "InternalServerError": {
+      "description": "Describes an error response",
+      "type": "object",
+      "properties": {
+        "code": {
+          "description": "Code defining an error message",
+          "example": 123,
+          "type": "string"
+        },
+        "message": {
+          "description": "Message describing the error",
+          "example": "This is an error message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DealDocumentResponse": {
+      "type": "object",
+      "properties": {
+        "dealId": {
+          "type": "integer"
+        },
+        "documentName": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "dealId"
+      ]
+    }
+  },
+  "paths": {
+    "/dealDocs": {
+      "post": {
+        "description": "Creates new deal documents",
+        "operationId": "addDealDocs",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/DealDocumentResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/BadRequest"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/InternalServerError"
+            }
+          }
+        },
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Deal Document Request",
+            "schema": {
+              "$ref": "#/definitions/deal"
+            }
+          }
+        ],
+        "summary": "Add new Deal Documents"
+      }
+    }
+  }
+}

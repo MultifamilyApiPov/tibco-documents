@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1544634116962Converted/JsonSchema" xmlns:tns="/T1544634116962Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="GiveNewSchemaNameHere" type="tns:GiveNewSchemaNameHere"/>
+    <xs:complexType name="GiveNewSchemaNameHere">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="dealId" type="xs:integer"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="dealdocuments" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

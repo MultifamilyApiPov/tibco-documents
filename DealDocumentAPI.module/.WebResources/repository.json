@@ -1,0 +1,16 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [{
+            "localTimestamp": 8504,
+            "localURI": "/DealDocumentAPI.module/Service Descriptors/Deal Document API_1.0.0.json",
+            "disabled": false,
+            "remoteTimestamp": 1544226437000,
+            "localHash": "6d23b37451d8e33cb1e5bbbba1d33dc8a4f18237",
+            "remoteId": "43",
+            "remoteHash": "6d23b37451d8e33cb1e5bbbba1d33dc8a4f18237"
+        }],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": []
+}

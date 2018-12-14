@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:JsonSchema="/T1544204554727Converted/JsonSchema" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_HTDOgPpHEeilBY1f-HuIHw" targetNamespace="http://tns.tibco.com/bw/composite/DealDocumentAPI.module" name="DealDocumentAPI.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_tlEo4vpQEeilBY1f-HuIHw" name="dealDocs" promote="ComponentProcess/dealDocs">
+    <sca:interface.wsdl xmi:id="_tlF3APpQEeilBY1f-HuIHw" interface="http://xmlns.example.com/20181207134834PLT#wsdl.interface(dealDocs)" scaext:wsdlLocation="../Processes/dealdocumentapi/module/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_tlHFIPpQEeilBY1f-HuIHw" name="RestService" path="/dealDocs" docBasePath="http://localhost:7777/DealDocumentAPI.module" docResourcePath="DealDocs" basePath="/" connector="dealdocumentapi.module.Process" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/Deal Document API_1.0.0.json">
+      <operation xmi:id="_tlITQPpQEeilBY1f-HuIHw" operationName="post" nickname="addDealDocs" httpMethod="POST" notes="Creates new deal documents" responseStyle="element" requestStyle="element">
+        <responseStatus xmi:id="_tlPA8PpQEeilBY1f-HuIHw" statusCode="201" reasonPhrase="Created" elementQName="JsonSchema:DealDocumentResponse"/>
+        <responseStatus xmi:id="_tlPA8vpQEeilBY1f-HuIHw" statusCode="400" reasonPhrase="Bad Request" elementQName="JsonSchema:BadRequest"/>
+        <responseStatus xmi:id="_tlPoAPpQEeilBY1f-HuIHw" statusCode="500" reasonPhrase="Internal Server Error" elementQName="JsonSchema:InternalServerError"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_tlPoAfpQEeilBY1f-HuIHw"/>
+      <import xmi:id="_tlPA8fpQEeilBY1f-HuIHw" importType="http://www.w3.org/2001/XMLSchema" namespace="/T1544204554727Converted/JsonSchema"/>
+      <advancedConfig xmi:id="_tlHFIfpQEeilBY1f-HuIHw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_tlITQfpQEeilBY1f-HuIHw" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_Hnz9kPpHEeilBY1f-HuIHw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_HoHfkPpHEeilBY1f-HuIHw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_HoHfkfpHEeilBY1f-HuIHw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_HoQpgPpHEeilBY1f-HuIHw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_HoQpgfpHEeilBY1f-HuIHw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_HoaagPpHEeilBY1f-HuIHw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_u19YEPpHEeilBY1f-HuIHw" name="salesforce.wsdl" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_svAjkPpQEeilBY1f-HuIHw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_svAjkfpQEeilBY1f-HuIHw" processName="dealdocumentapi.module.Process"/>
+    <sca:service xmi:id="_tlEo4PpQEeilBY1f-HuIHw" name="dealDocs">
+      <sca:interface.wsdl xmi:id="_tlEo4fpQEeilBY1f-HuIHw" interface="http://xmlns.example.com/20181207134834PLT#wsdl.interface(dealDocs)" scaext:wsdlLocation="../Processes/dealdocumentapi/module/Process.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

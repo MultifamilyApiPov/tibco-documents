@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:salesforceconnection="http://ns.tibco.com/bw/palette/salesforceconnection" xmi:id="_jND3of4_EeimC7oIO-LnBw" name="getdealdocapi.module.SalesforceConnection" type="salesforceconnection:SalesforceConnection">
+  <jndi:configuration xsi:type="salesforceconnection:SalesforceConnection" xmi:id="_jND3ov4_EeimC7oIO-LnBw" wsdlFilePath="/SalesforceResources/dedev1.wsdl" serverURL="https://test.salesforce.com/services/Soap/c/44.0/0DF3C000000GoH9" userName="automationtester@fanniemae.com.dedev1" password="#!1o/iii1ZbsT3X7+tERCKRmwfmLmCOYH4qx9R10YO9iJWlDWfAkuCyz10j8DQFSU2qEUpCaV9ZnXdU7tY+cAQJq4ULax090cK9ZTM9SoHwBI="/>
+</jndi:namedResource>

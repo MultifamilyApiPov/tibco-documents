@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="/T1544204554727Converted/JsonSchema" xmlns:tns="/T1544204554727Converted/JsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="DealDocs" type="tns:DealDocs"/>
+    <xs:complexType name="DealDocs">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="DealDocs" type="tns:DealDoc"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="BadRequest" type="tns:BadRequest"/>
+    <xs:complexType name="BadRequest">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="InternalServerError" type="tns:InternalServerError"/>
+    <xs:complexType name="InternalServerError">
+        <xs:sequence>
+            <xs:element name="code" type="xs:string"/>
+            <xs:element name="message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="deal" type="tns:deal"/>
+    <xs:complexType name="deal">
+        <xs:sequence>
+            <xs:element name="dealId" type="xs:integer"/>
+            <xs:element minOccurs="0" name="dealdocs" type="tns:DealDocs"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DealDocumentResponse" type="tns:DealDocumentResponse"/>
+    <xs:complexType name="DealDocumentResponse">
+        <xs:sequence>
+            <xs:element name="dealId" type="xs:integer"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="documentName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="DealDoc" type="tns:DealDoc"/>
+    <xs:complexType name="DealDoc">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="reference" type="xs:string"/>
+            <xs:element name="documentName" type="xs:string"/>
+            <xs:element name="documentCategory">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Transaction Review"/>
+                        <xs:enumeration value="Property"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="documentType">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Lender Narrative"/>
+                        <xs:enumeration value="Property Photos"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="documentFile" type="xs:base64Binary"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,62 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "GetDealDoc",
+    "x-lastModified": "Dec 12, 2018 09:00AM PST"
+  },
+  "paths": {
+    "/DealDoc": {
+      "get": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "201": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/GiveNewSchemaNameHere"
+            },
+            "examples": {
+              "application/json": {
+                "dealId": 66503,
+                "dealdocuments": [
+                  "sampleDemo1.pdf"
+                ]
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "DealId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "operationId": "getDealDoc"
+      }
+    }
+  },
+  "definitions": {
+    "GiveNewSchemaNameHere": {
+      "type": "object",
+      "properties": {
+        "dealId": {
+          "type": "integer",
+          "default": 66503
+        },
+        "dealdocuments": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "default": "sampleDemo1.pdf"
+          }
+        }
+      }
+    }
+  }
+}
